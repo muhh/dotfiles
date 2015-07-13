@@ -45,7 +45,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(boot2docker brew bundler docker docker-compose drush gem git heroku knife mosh osx rake rbenv ssh-agent sublime vagrant)
+plugins=(boot2docker brew bundler docker docker-compose drush gem git heroku mosh osx rake rbenv ssh-agent sublime vagrant)
 
 # User configuration
 
@@ -54,8 +54,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -85,3 +84,6 @@ alias dokku="ssh -t dokku@dokku.muhh.io"
 $(boot2docker shellinit 2> /dev/null)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
+
+export PATH="$HOME/.bin:$PATH"
+eval "$(rbenv init - --no-rehash zsh)"
