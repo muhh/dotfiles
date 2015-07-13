@@ -38,9 +38,6 @@ ZSH_THEME="simple"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -85,5 +82,31 @@ $(boot2docker shellinit 2> /dev/null)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
+# zsh config
+# vi style incremental search
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward  
+
+setopt AUTO_CD
+
+# Editors. so many of them.
+#export EDITOR='mvim -f'
+#export EDITOR='mvim -f --nomru -c "au VimLeave *"'
+#export EDITOR='mate -w'
+#export EDITOR='subl -w'
+#export VISUAL='vim'
+#export EDITOR="$VISUAL"
+#export EDITOR='atom --wait --new-window'
+export EDITOR="vim"
+bindkey -v
+
+# Project directories
+chef=/Users/muhh/Repositories/chef
+ssl=/Users/muhh/Repositories/ssl
+dashboard=/Users/muhh/Repositories/dashboard_api
+
 export PATH="$HOME/.bin:$PATH"
+
 eval "$(rbenv init - --no-rehash zsh)"

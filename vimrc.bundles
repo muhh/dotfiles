@@ -1,0 +1,15 @@
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'L9'
+Plugin 'command-t'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
