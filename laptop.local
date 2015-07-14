@@ -1,5 +1,18 @@
+git_clone_or_pull() {
+  local REPOSRC=$1
+  local LOCALREPO=$2
+  local LOCALREPO_VC_DIR=$LOCALREPO/.git
+  if [[ ! -d "$LOCALREPO_VC_DIR" ]]; then
+    git clone --recursive $REPOSRC $LOCALREPO
+  else
+    pushd $LOCALREPO
+    git pull $REPOSRC && git submodule update --init --recursive
+    popd
+  fi
+}
+
 if [ ! -d "$HOME/.dotfiles" ]; then
-  git clone https://github.com/muhh/dotfiles.git ~/.dotfiles
+  git_clone_or_pull https://github.com/muhh/dotfiles.git ~/.dotfiles
   rcup -v
 fi
 
@@ -13,6 +26,7 @@ cask_install 'moom'
 cask_install 'dayone-cli'
 cask_install 'daisydisk'
 cask_install 'istat-menus'
+cask_install 'knock'
 cask_install 'lastfm'
 cask_install 'minecraft'
 cask_install 'moneymoney'
@@ -20,3 +34,6 @@ cask_install 'superduper'
 cask_install 'vlc'
 cask_install 'ynab'
 
+# Setup VIM
+git_clone_or_pull https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
