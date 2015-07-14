@@ -91,17 +91,6 @@ bindkey '^N' history-search-forward
 
 setopt AUTO_CD
 
-# Editors. so many of them.
-#export EDITOR='mvim -f'
-#export EDITOR='mvim -f --nomru -c "au VimLeave *"'
-#export EDITOR='mate -w'
-#export EDITOR='subl -w'
-#export VISUAL='vim'
-#export EDITOR="$VISUAL"
-#export EDITOR='atom --wait --new-window'
-export EDITOR="vim"
-bindkey -v
-
 # Project directories
 chef=/Users/muhh/Repositories/chef
 ssl=/Users/muhh/Repositories/ssl
