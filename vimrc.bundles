@@ -10,6 +10,8 @@ Plugin 'L9'
 Plugin 'command-t'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
