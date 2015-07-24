@@ -57,7 +57,7 @@ export LC_CTYPE=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='subl'
 fi
 
 # Compilation flags
@@ -87,7 +87,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
-bindkey '^N' history-search-forward  
+bindkey '^N' history-search-forward
 
 setopt AUTO_CD
 
