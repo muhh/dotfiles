@@ -57,7 +57,7 @@ export LC_CTYPE=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='subl'
+  export EDITOR='subl --new-window --wait'
 fi
 
 # Compilation flags
