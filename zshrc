@@ -79,6 +79,7 @@ alias dokku="ssh -t dokku@dokku.muhh.io"
 
 # Boot2docker initialisation
 $(boot2docker shellinit 2> /dev/null)
+export DOCKER_IP=$(boot2docker ip)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
