@@ -42,7 +42,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(boot2docker brew bundler docker docker-compose drush gem git heroku mosh osx rake rbenv ssh-agent sublime vagrant)
+plugins=(brew bundler docker docker-compose drush gem git heroku mosh osx rake rbenv ssh-agent sublime vagrant)
 
 # User configuration
 
@@ -77,9 +77,9 @@ fi
 
 alias dokku="ssh -t dokku@dokku.muhh.io"
 
-# Boot2docker initialisation
-$(boot2docker shellinit 2> /dev/null)
-export DOCKER_IP=$(boot2docker ip)
+# docker-machine initialisation
+eval "$(docker-machine env dev)"
+export DOCKER_IP=$(docker-machine ip dev)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
