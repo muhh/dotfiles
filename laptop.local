@@ -21,7 +21,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   rcup -v
 fi
 
-brew_install 'tmux-mem-cpu-load'
+brew_install_or_upgrade 'tmux-mem-cpu-load'
 cask_install 'moom'
 cask_install 'dayone-cli'
 cask_install 'daisydisk'
@@ -34,13 +34,3 @@ cask_install 'moneymoney'
 cask_install 'superduper'
 cask_install 'vlc'
 cask_install 'ynab'
-
-# Setup VIM
-git_clone_or_pull https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-
-cd ~/.vim/bundle/command-t/ruby/command-t
-/usr/bin/ruby extconf.rb
-make
-cd -
-
