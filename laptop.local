@@ -12,7 +12,7 @@ git_clone_or_pull() {
 }
 
 if [ ! -d "$HOME/.dotfiles" ]; then
-  git_clone_or_pull https://github.com/muhh/dotfiles.git ~/.dotfiles
+  git_clone_or_pull https://github.com/muhh/dotfiles.git ~/.dotfiles.muhh
   rcup -v
 fi
 
@@ -22,15 +22,31 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 brew_install_or_upgrade 'tmux-mem-cpu-load'
-cask_install 'moom'
+brew_install_or_upgrade wget
+
+cask_install 'alfred'
+cask_install 'concentrate'
 cask_install 'dayone-cli'
 cask_install 'daisydisk'
+cask_install 'default-folder-x'
+cask_install 'fluid'
+cask_install 'google-chrome'
 cask_install 'gpgtools'
+cask_install 'hazel'
 cask_install 'istat-menus'
+cask_install 'keyboard-maestro'
 cask_install 'knock'
 cask_install 'lastfm'
+cask_install 'mailplane'
+cask_install 'marsedit'
 cask_install 'minecraft'
 cask_install 'moneymoney'
+cask_install 'moom'
+cask_install 'omnigraffle'
+cask_install 'omnioutliner'
+cask_install 'spotify'
+cask_install 'stay'
 cask_install 'superduper'
+cask_install 'transmission'
 cask_install 'vlc'
 cask_install 'ynab'

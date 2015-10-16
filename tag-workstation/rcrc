@@ -1,0 +1,4 @@
+EXCLUDES="README*"
+SYMLINK_DIRS="gnupg"
+DOTFILES_DIRS="/Users/muhh/.dotfiles /Users/muhh/.dotfiles.muhh"
+
