@@ -1,0 +1,91 @@
+#
+# terminal
+#
+
+set -g default-terminal "screen-256color"
+set -g default-command "reattach-to-user-namespace -l zsh"
+setw -g mode-mouse on
+setw -g mouse-select-window on
+setw -g mouse-select-pane on
+
+#
+# window notifications
+#
+
+setw -g monitor-activity on
+set -g visual-activity on
+
+
+#
+# keys
+#
+set -g status-keys vi
+setw -g mode-keys vi
+
+# action key: Ctrl-n not like screen (easier to type)
+unbind C-b
+set-option -g prefix C-n
+bind n send-prefix
+
+# No escape time for vi mode
+set -sg escape-time 0
+
+# New windows/pane in $PWD
+bind c new-window -c "#{pane_current_path}"
+
+# reload config
+unbind r
+bind r source-file ~/.tmux.conf \; display "tmux config reloaded!"
+
+# split windows
+unbind %
+bind | split-window -h
+bind - split-window -v
+
+# movement keys
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# window navigation
+bind n next-window
+bind N previous-window
+
+# copy mode
+setw -g mode-keys vi
+bind ` copy-mode
+unbind [
+unbind p
+bind p paste-buffer
+bind -t vi-copy v begin-selection
+bind -t vi-copy y copy-selection
+bind -t vi-copy Escape cancel
+bind y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
+
+# status bar
+set -g status-utf8 on
+set -g status-interval 2
+
+# set first kindow to index 1 (not 0) to map more to the keyboard layout...
+set-option -g base-index 1
+set-window-option -g pane-base-index 1
+
+set -g status-justify centre
+setw -g monitor-activity on
+set -g visual-activity on
+
+# black background
+set -g status-bg black
+# white foreground
+set -g status-fg white
+# highlight active window
+set-window-option -g window-status-current-bg red
+# left: hostname
+set -g status-left '#[fg=green]#S'
+
+set -g status-right "#[fg=green,bg=black]#(tmux-mem-cpu-load --colors --interval 2)#[default]"
+set -g status-right-length 60
+
+set -g set-titles on
+set -g set-titles-string "#h"
