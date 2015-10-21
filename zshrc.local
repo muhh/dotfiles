@@ -79,10 +79,6 @@ fi
 
 alias dokku="ssh -t dokku@dokku.muhh.io"
 
-# docker-machine initialisation
-eval "$(docker-machine env dev)"
-export DOCKER_IP=$(docker-machine ip dev)
-
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # zsh config
@@ -100,5 +96,3 @@ ssl=/Users/muhh/Repositories/ssl
 dashboard=/Users/muhh/Repositories/dashboard_api
 
 export PATH="$HOME/.bin:$PATH"
-
-eval "$(rbenv init - --no-rehash zsh)"
