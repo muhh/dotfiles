@@ -46,6 +46,8 @@ plugins=(brew bundler docker docker-compose drush gem git heroku mosh osx rake r
 
 # User configuration
 
+HISTFILE=~/.zsh_history
+
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
