@@ -1,6 +1,6 @@
 [user]
 	name = Markus Heurung
-	email = markus@freistil.it
+	email = markus@heurung.net
 [alias]
   co = checkout
   # Usage: git track origin/feature-123-login-form
