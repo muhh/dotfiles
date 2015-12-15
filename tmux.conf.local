@@ -4,9 +4,8 @@
 
 set -g default-terminal "screen-256color"
 set -g default-command "reattach-to-user-namespace -l zsh"
-setw -g mode-mouse on
-setw -g mouse-select-window on
-setw -g mouse-select-pane on
+
+set-window-option -g mouse on
 
 #
 # window notifications
