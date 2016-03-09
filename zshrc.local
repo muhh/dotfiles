@@ -55,7 +55,7 @@ source $ZSH/oh-my-zsh.sh
 
 export LC_CTYPE=en_US.UTF-8
 
-export EDITOR='vim'
+export EDITOR='subl -w'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -91,3 +91,4 @@ ssl=/Users/muhh/Repositories/ssl
 dashboard=/Users/muhh/Repositories/dashboard_api
 
 export PATH="$HOME/.bin:$PATH"
+eval "$(rbenv init - --no-rehash zsh)"
