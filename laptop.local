@@ -26,7 +26,6 @@ brew_install_or_upgrade wget
 brew_install_or_upgrade rbenv-default-gems
 
 cask_install 'alfred'
-cask_install 'concentrate'
 cask_install 'dayone-cli'
 cask_install 'daisydisk'
 cask_install 'default-folder-x'
