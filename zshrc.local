@@ -42,7 +42,7 @@ ZSH_THEME="simple"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew bundler docker docker-compose drush gem git heroku mosh osx rake rbenv ssh-agent sublime vagrant)
+plugins=(bundler docker docker-compose drush gem git heroku mosh osx rake rbenv ssh-agent sublime vagrant)
 
 # User configuration
 
