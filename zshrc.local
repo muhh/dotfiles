@@ -52,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 export LC_CTYPE=en_US.UTF-8
 
-export EDITOR='atom -w'
+export EDITOR='subl -w'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
