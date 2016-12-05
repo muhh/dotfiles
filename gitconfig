@@ -56,7 +56,7 @@
 	default = simple
 [core]
 	excludesfile = /Users/muhh/.gitignore_global
-	editor = atom -n -w
+	editor = vim
 [filter "media"]
 	required = true
 	clean = git media clean %f
@@ -84,3 +84,5 @@
   submodule = 1
 [mergetool]
 	keepBackup = true
+[gui]
+	recentrepo = /Users/muhh/Repositories/chef
