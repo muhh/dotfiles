@@ -1,2 +1,0 @@
-set-option -g status-right '#(cat ~/.thyme-tmux) #[fg=yellow]%d %b %R'
-set-option -g status-interval 1
