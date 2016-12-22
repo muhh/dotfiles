@@ -58,7 +58,7 @@ noremap <leader>yy "*Y
 " Solarized Dark color scheme using the vim-colors-solarized plugin
 try
     colorscheme solarized
-    set background=light
+    set background=dark
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
 catch
