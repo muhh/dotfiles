@@ -88,3 +88,7 @@ ssl=/Users/muhh/Repositories/ssl
 dashboard=/Users/muhh/Repositories/dashboard_api
 
 eval "$(rbenv init - --no-rehash zsh)"
+
+# Automatically added by Platform.sh CLI installer
+export PATH="/Users/muhh/.platformsh/bin:$PATH"
+. '/Users/muhh/.platformsh/shell-config.rc' 2>/dev/null
