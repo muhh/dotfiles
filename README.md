@@ -1,6 +1,6 @@
 # muhh dotfiles
 
-My collection of configuration files for zsh, tmux and many other command line tools.
+My collection of configuration files for fish, tmux and many other command line tools.
 
 ## Installation
 

@@ -16,11 +16,6 @@ if [ ! -d "$HOME/.dotfiles" ]; then
   rcup -v
 fi
 
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  rcup -v
-fi
-
 brew_install_or_upgrade 'tmux-mem-cpu-load'
 brew_install_or_upgrade wget
 brew_install_or_upgrade rbenv-default-gems
@@ -46,4 +41,3 @@ cask_install 'stay'
 cask_install 'superduper'
 cask_install 'transmission'
 cask_install 'vlc'
-cask_install 'ynab'
