@@ -1,0 +1,8 @@
+package brew
+package bundler
+package osx
+package rbenv
+package sublime
+theme agnoster
+theme bobthefish
+theme default
