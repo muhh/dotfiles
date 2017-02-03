@@ -7,3 +7,8 @@
 #fi
 #vim -u $HOME/.vimrc.bundles +PlugInstall +PlugClean! +qa
 
+# Install oh-my-fish
+if [ ! -d $HOME/.local/share/omf ]; then
+  curl -L http://get.oh-my.fish | fish
+fi
+fish -c "omf install"
