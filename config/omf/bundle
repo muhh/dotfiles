@@ -4,7 +4,6 @@ package config
 package osx
 package rbenv
 package sublime
-package tmux-zen
 theme agnoster
 theme bobthefish
 theme default
