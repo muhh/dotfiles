@@ -1,0 +1,2 @@
+" Better looking git support
+Plug 'airblade/vim-gitgutter'
