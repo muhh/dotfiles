@@ -1,9 +1,8 @@
 package brew
 package bundler
 package config
+package fzf
 package osx
 package rbenv
-package sublime
-theme agnoster
-theme bobthefish
 theme default
+theme lambda

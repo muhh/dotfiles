@@ -1,2 +1,17 @@
+" Vim solarized color scheme
+Plug 'micha/vim-colors-solarized'
+
 " Better looking git support
 Plug 'airblade/vim-gitgutter'
+
+" Disctraction-free writing
+Plug 'junegunn/goyo.vim'
+
+" better fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Better navigator
+Plug 'tpope/vim-unimpaired'
+
+Plug 'vim-airline/vim-airline'
