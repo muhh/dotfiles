@@ -4,6 +4,9 @@ Host *
 Host arbeitszimmer.muhh.io
     Hostname m0cz0gf8kvndrjon.myfritz.net
     Port 2222
+Host muhhio rasalhague.uberspace.de
+    Hostname rasalhague.uberspace.de
+    User muhhio
 Host pro09a pro09a.freistil-hosting.net
     Hostname pro09a.freistil-hosting.net
     Port 2201

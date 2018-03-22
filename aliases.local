@@ -1,8 +1,0 @@
-# Simpler shell commands
-
-alias conncheck='mtr -s 1500 -r -c 1000 -i 0.1'
-
-# Git
-alias gsp="git smart-pull"
-alias gspp="git smart-pull && git push"
-

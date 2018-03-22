@@ -1,4 +1,4 @@
 EXCLUDES="README*"
 SYMLINK_DIRS="gnupg"
-DOTFILES_DIRS="/home/muhh/.dotfiles.muhh /home/muhh/.freistil-dotfiles"
+DOTFILES_DIRS="/home/muhh/.dotfiles.muhh"
 

@@ -16,7 +16,6 @@ if [ ! -d "$HOME/.dotfiles" ]; then
   rcup -v
 fi
 
-brew_install_or_upgrade 'tmux-mem-cpu-load'
 brew_install_or_upgrade wget
 brew_install_or_upgrade rbenv-default-gems
 
@@ -31,7 +30,6 @@ cask_install 'hazel'
 cask_install 'istat-menus'
 cask_install 'keyboard-maestro'
 cask_install 'mailplane'
-cask_install 'minecraft'
 cask_install 'moneymoney'
 cask_install 'moom'
 cask_install 'spotify'
