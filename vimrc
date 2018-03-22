@@ -12,6 +12,7 @@ set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set wildmenu
 set wildmode=full
+set laststatus=2
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -95,9 +96,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
-" Plug 'junegunn/vim-emoji'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -163,3 +163,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \  },
+      \  'component_function': {
+      \    'gitbranch': 'fugitive#head'
+      \  },
+      \ }
