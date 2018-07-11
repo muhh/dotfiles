@@ -87,7 +87,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 " Plug 'w0rp/ale'
@@ -127,9 +129,13 @@ au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 au BufRead,BufNewFile COMMIT_EDITMSG setlocal textwidth=72
 
 
+" Fuzzy helpers
 nmap ; :Buffers<CR>
-nmap <Leader>t :Files<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>F :GFiles<CR>
 nmap <Leader>r :Tags<CR>
+nmap <Leader>a :Ag<CR>
+nmap <Leader>h :History<CR>
 
 " Window management
 nnoremap <silent> <leader>s :split<CR>
@@ -154,6 +160,9 @@ if &term == 'screen-256color'
     nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 endif
 
+" Generic helpers
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
 " Snippet configuration
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -162,6 +171,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" my snippets
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 let g:lightline = {
       \ 'colorscheme': 'solarized',
