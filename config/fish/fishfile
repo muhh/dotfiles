@@ -1,9 +1,11 @@
 fisherman/autojump
+oh-my-fish/theme-bobthefish
 oh-my-fish/plugin-brew
 laughedelic/brew-completions
 oh-my-fish/plugin-bundler
 fisherman/fzf
-hasanozgan/theme-lambda
 oh-my-fish/plugin-osx
+laughedelic/pisces
 fisherman/rbenv
+zimski/ssh_agent
 fisherman/z

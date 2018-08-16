@@ -82,7 +82,8 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'altercation/vim-colors-solarized'
+" Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
@@ -100,18 +101,22 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
+Plug 'justinmk/vim-sneak'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
+colorscheme nord
+let g:nord_italic = 1
+let g:nord_underline = 1
+let g:nord_italic_comments = 1
+let g:nord_cursor_line_number_background = 1
 
-" Solarized Dark color scheme using the vim-colors-solarized plugin
-try
-    colorscheme solarized
-    set background=dark
-    let g:solarized_termtrans=1
-    let g:solarized_termcolors=256
-catch
-endtry
+" Supress python errors I don't need
+" see https://github.com/SirVer/ultisnips/issues/996#issuecomment-403347577
+if has('python3')
+  silent! python3 1
+endif
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
@@ -163,6 +168,11 @@ endif
 " Generic helpers
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" YouCompleteMe configuration
+" disable tab to make ultisnips work
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
 " Snippet configuration
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -176,7 +186,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
