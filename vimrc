@@ -85,6 +85,8 @@ call plug#begin('~/.vim/bundle')
 " Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'roxma/vim-tmux-clipboard'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
