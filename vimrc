@@ -29,6 +29,11 @@ if has('persistent_undo')
 endif
 " ================ Indentation ======================
 
+if has('gui_running')
+  set guifont=FuraCode\ Nerd\ Font\ Mono:h14
+  set linespace=4
+endif
+
 set autoindent
 set smartindent
 set smarttab
@@ -104,7 +109,6 @@ Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
