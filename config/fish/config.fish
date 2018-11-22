@@ -5,6 +5,8 @@ set PATH ~/.bin $PATH
 source ~/.iterm2_shell_integration.fish
 alias lc='colorls -sd'
 
+status --is-interactive; and source (rbenv init -|psub)
+
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
 
 # bobthefish
