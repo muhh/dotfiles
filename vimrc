@@ -61,21 +61,6 @@ set encoding=utf8
 
 set ffs=unix,dos,mac
 
-" With a map leader it's possible to do extra key combinations
-" " like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
-
-" Yank text to the OS X clipboard
-"noremap <leader>y "*y
-"noremap <leader>yy "*Y
-
-" Preserve indentation while pasting text from the OS X clipboard
-"noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
-
-" Add a shortcut for netrw
-"nmap <silent> <Leader>e :Explore<CR>
-
 " === Plugins ===
 
 " Plugin automation
@@ -89,6 +74,7 @@ call plug#begin('~/.vim/bundle')
 
 " Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'roxma/vim-tmux-clipboard'
@@ -96,6 +82,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-ruby/vim-ruby'
@@ -106,10 +93,8 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'airblade/vim-gitgutter'
-Plug 'itchyny/lightline.vim'
 Plug 'justinmk/vim-sneak'
-
+Plug 'janko-m/vim-test'
 call plug#end()
 
 colorscheme nord
@@ -138,6 +123,25 @@ autocmd BufWrite *.rb :call DeleteTrailingWS()
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 " Limit commit messages to 72 character lines
 au BufRead,BufNewFile COMMIT_EDITMSG setlocal textwidth=72
+
+" With a map leader it's possible to do extra key combinations
+" " like <leader>w saves the current file
+nnoremap <Space> <nop>
+let mapleader = "\<Space>"
+let g:mapleader = " "
+
+" Yank text to the OS X clipboard
+"noremap <leader>y "*y
+"noremap <leader>yy "*Y
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+" Add a shortcut for netrw
+nmap <silent> <Leader>e :Explore<CR>
+
+" Add short for save file
+nnoremap <Leader>w :w<CR>
 
 
 " Fuzzy helpers
@@ -174,11 +178,6 @@ endif
 " Generic helpers
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-" YouCompleteMe configuration
-" disable tab to make ultisnips work
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-
 " Snippet configuration
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -201,3 +200,15 @@ let g:lightline = {
       \    'gitbranch': 'fugitive#head'
       \  },
       \ }
+
+" make test commands execute using dispatch.vim
+let test#strategy = "vimterminal"
+
+" Run test automatically
+" https://github.com/janko-m/vim-test#autocommands
+augroup test
+  autocmd!
+  autocmd BufWrite * if test#exists() |
+    \   TestFile |
+    \ endif
+augroup END
