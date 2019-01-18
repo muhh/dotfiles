@@ -2,9 +2,19 @@ Host *
     UseKeychain yes
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_rsa
+    ForwardAgent yes
 Host arbeitszimmer
     Hostname m0cz0gf8kvndrjon.myfritz.net
     Port 2222
 Host muhhio rasalhague.uberspace.de
     Hostname rasalhague.uberspace.de
     User muhhio
+Host *vm*-*.f7it.net
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+Host c*s.freistilbox.net
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+Host c*v.freistilbox.net
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
