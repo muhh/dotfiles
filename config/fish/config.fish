@@ -4,6 +4,8 @@ set -x CHEF_REPO_PATH ~/Repositories/chef
 set PATH ~/.bin $PATH
 source ~/.iterm2_shell_integration.fish
 alias lc='colorls -sd'
+set -x FZF_TMUX 1
+set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 
 status --is-interactive; and source (rbenv init -|psub)
 
