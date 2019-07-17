@@ -6,6 +6,9 @@ Host *
 Host arbeitszimmer
     Hostname m0cz0gf8kvndrjon.myfritz.net
     Port 2222
+Host home
+    Hostname home.heurung.net
+    Port 22
 Host muhhio rasalhague.uberspace.de
     Hostname rasalhague.uberspace.de
     User muhhio
