@@ -27,6 +27,9 @@ if has('persistent_undo')
   set undodir=~/.vim/undo
   set undofile
 endif
+
+set directory=~/.vim/swapfiles
+
 " ================ Indentation ======================
 
 if has('gui_running')
@@ -72,7 +75,6 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-" Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -87,14 +89,12 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-" Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
-Plug 'janko-m/vim-test'
 call plug#end()
 
 colorscheme nord
@@ -131,8 +131,8 @@ let mapleader = "\<Space>"
 let g:mapleader = " "
 
 " Yank text to the OS X clipboard
-"noremap <leader>y "*y
-"noremap <leader>yy "*Y
+noremap <leader>y "*y
+noremap <leader>yy "*Y
 
 " Preserve indentation while pasting text from the OS X clipboard
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
@@ -142,7 +142,6 @@ nmap <silent> <Leader>e :Explore<CR>
 
 " Add short for save file
 nnoremap <Leader>w :w<CR>
-
 
 " Fuzzy helpers
 nmap ; :Buffers<CR>
@@ -178,6 +177,17 @@ endif
 " Generic helpers
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
+" Fugitive mapping
+nmap <leader>gb :Gblame<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gd :Gdiff<cr>
+nmap <leader>gg :Ggrep
+nmap <leader>gl :Glog<cr>
+nmap <leader>gp :Git pull<cr>
+nmap <leader>gP :Git push<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gw :Gbrowse<cr>
+
 " Snippet configuration
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -201,14 +211,3 @@ let g:lightline = {
       \  },
       \ }
 
-" make test commands execute using dispatch.vim
-let test#strategy = "vimterminal"
-
-" Run test automatically
-" https://github.com/janko-m/vim-test#autocommands
-augroup test
-  autocmd!
-  autocmd BufWrite * if test#exists() |
-    \   TestFile |
-    \ endif
-augroup END
