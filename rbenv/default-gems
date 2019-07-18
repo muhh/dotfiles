@@ -1,3 +1,4 @@
 bundler
 rake
 git-smart
+terminal-notifier
