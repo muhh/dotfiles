@@ -1,0 +1,5 @@
+[user]
+name = Markus Heurung
+email = markus@heurung.net
+[push]
+	default = current
