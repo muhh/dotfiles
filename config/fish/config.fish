@@ -1,5 +1,5 @@
-#set -x EDITOR vim
-set -x EDITOR mate -w
+set -x EDITOR vim
+#set -x EDITOR mate -w
 set -x VISUAL $EDITOR
 set -x CHEF_REPO_PATH ~/Repositories/chef
 set PATH ~/.bin $PATH
@@ -58,3 +58,5 @@ set fish_pager_color_completion $nord6
 set fish_pager_color_description $nord10
 set fish_pager_color_progress $nord12
 set fish_pager_color_secondary $nord1
+
+eval (starship init fish)
