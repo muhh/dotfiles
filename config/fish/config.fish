@@ -1,3 +1,4 @@
+set -x LC_ALL en_US.UTF-8
 set -x EDITOR vim
 #set -x EDITOR mate -w
 set -x VISUAL $EDITOR
