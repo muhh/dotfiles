@@ -84,7 +84,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
+"Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-ruby/vim-ruby'
@@ -96,6 +97,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'w0rp/ale'
 Plug 'maximbaz/lightline-ale'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 colorscheme nord
