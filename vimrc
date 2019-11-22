@@ -84,8 +84,8 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-Plug 'mhinz/vim-signify'
-"Plug 'airblade/vim-gitgutter'
+"Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-ruby/vim-ruby'
@@ -98,6 +98,7 @@ Plug 'honza/vim-snippets'
 Plug 'w0rp/ale'
 Plug 'maximbaz/lightline-ale'
 Plug 'hashivim/vim-terraform'
+Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 colorscheme nord
@@ -152,7 +153,7 @@ nmap <Leader>f :Files<CR>
 nmap <Leader>F :GFiles<CR>
 nmap <Leader>r :Tags<CR>
 nmap <Leader>a :Ag<CR>
-nmap <Leader>h :History<CR>
+"nmap <Leader>h :History<CR>
 
 " Window management
 nnoremap <silent> <leader>s :split<CR>
