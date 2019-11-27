@@ -13,6 +13,7 @@ set autoread                    "Reload files changed outside vim
 set wildmenu
 set wildmode=full
 set laststatus=2
+set scrolloff=3
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
