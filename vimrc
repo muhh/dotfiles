@@ -100,6 +100,7 @@ Plug 'w0rp/ale'
 Plug 'maximbaz/lightline-ale'
 Plug 'hashivim/vim-terraform'
 Plug 'psliwka/vim-smoothie'
+Plug 'ojroques/vim-scrollstatus'
 call plug#end()
 
 colorscheme nord
@@ -205,19 +206,22 @@ let g:UltiSnipsEditSplit="vertical"
 " my snippets
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
+let g:scrollstatus_size = 25
+
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ],
-      \             [ 'lineinfo' ] ],
+      \             [ 'scroll_status' ] ],
       \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-      \              [ 'percent' ],
+      \              [ 'lineinfo' ],
       \              [ 'filetype' ]
       \            ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'fugitive#head',
+      \   'scroll_status': 'ScrollStatus'
       \ },
       \ }
 
