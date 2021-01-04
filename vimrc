@@ -14,6 +14,7 @@ set wildmenu
 set wildmode=full
 set laststatus=2
 set scrolloff=3
+set mouse=a
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -85,7 +86,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
-"Plug 'mhinz/vim-signify'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
@@ -96,11 +96,12 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'w0rp/ale'
-Plug 'maximbaz/lightline-ale'
 Plug 'hashivim/vim-terraform'
 Plug 'psliwka/vim-smoothie'
 Plug 'ojroques/vim-scrollstatus'
+Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 colorscheme nord
@@ -154,7 +155,7 @@ nmap ; :Buffers<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>F :GFiles<CR>
 nmap <Leader>r :Tags<CR>
-nmap <Leader>a :Ag<CR>
+nmap <Leader>a :Rg<CR>
 "nmap <Leader>h :History<CR>
 
 " Window management
@@ -225,21 +226,28 @@ let g:lightline = {
       \ },
       \ }
 
-let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
+let NERDTreeShowHidden=1
 
-let g:lightline.component_type = {
-      \     'linter_checking': 'left',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'left',
-      \ }
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
 
-let g:lightline#ale#indicator_checking = "\uf110"
-let g:lightline#ale#indicator_warnings = "\uf071"
-let g:lightline#ale#indicator_errors = "\uf05e"
-let g:lightline#ale#indicator_ok = "\uf00c"
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
+
+function! ToggleNerdTree()
+  set eventignore=BufEnter
+  NERDTreeToggle
+  set eventignore=
+endfunction
+nmap <C-n> :call ToggleNerdTree()<CR>

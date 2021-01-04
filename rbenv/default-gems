@@ -1,4 +1,5 @@
 bundler
 rake
 git-smart
+t
 terminal-notifier

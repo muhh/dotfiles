@@ -12,6 +12,9 @@ Host home
 Host muhhio rasalhague.uberspace.de
     Hostname rasalhague.uberspace.de
     User muhhio
+Host c*-*-*.f7it.net
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
 Host *vm*-*.f7it.net
     StrictHostKeyChecking no
     UserKnownHostsFile /dev/null

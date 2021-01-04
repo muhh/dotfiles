@@ -12,11 +12,12 @@ alias ping='prettyping'
 set -x FZF_TMUX 1
 set -x FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 
-status --is-interactive; and source (rbenv init -|psub)
+status --is-interactive; and source (rbenv init - | psub)
 
 [ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
 
-# bobthefish
+fish_vi_key_bindings
+
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme terminal2-dark
 
