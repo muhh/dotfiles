@@ -62,3 +62,4 @@ set fish_pager_color_progress $nord12
 set fish_pager_color_secondary $nord1
 
 eval (starship init fish)
+zoxide init fish | source

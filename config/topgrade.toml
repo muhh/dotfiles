@@ -6,7 +6,7 @@
 
 # Same options as the command line flag
 #disable = ["system", "emacs"]
-disable = ["gem","node"]
+disable = ["gem","node","system","mas"]
 
 # List of remote machines with Topgrade installed on them
 #remote_topgrades = ["toothless", "pi", "parnas"]

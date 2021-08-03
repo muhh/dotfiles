@@ -23,12 +23,7 @@ set hidden
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
-" Only works all the time.
-if has('persistent_undo')
-  silent !mkdir ~/.vim/undo > /dev/null 2>&1
-  set undodir=~/.vim/undo
-  set undofile
-endif
+set undofile
 
 set directory=~/.vim/swapfiles
 
