@@ -3,7 +3,7 @@ set -x EDITOR vim
 #set -x EDITOR mate -w
 set -x VISUAL $EDITOR
 set -x CHEF_REPO_PATH ~/Repositories/chef
-set PATH ~/.bin $PATH
+set PATH ~/.bin /opt/homebrew/bin $PATH
 source ~/.iterm2_shell_integration.fish
 alias lc='colorls -sd'
 alias ls='lsd'
