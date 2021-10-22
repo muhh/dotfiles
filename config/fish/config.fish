@@ -3,7 +3,7 @@ set -x EDITOR vim
 #set -x EDITOR mate -w
 set -x VISUAL $EDITOR
 set -x CHEF_REPO_PATH ~/Repositories/chef
-set PATH ~/.bin /opt/homebrew/bin $PATH
+set PATH ~/.bin /opt/homebrew/bin /opt/homebrew/sbin $PATH
 source ~/.iterm2_shell_integration.fish
 alias lc='colorls -sd'
 alias ls='lsd'
@@ -63,3 +63,4 @@ set fish_pager_color_secondary $nord1
 
 eval (starship init fish)
 zoxide init fish | source
+fish_add_path /opt/homebrew/opt/curl/bin
