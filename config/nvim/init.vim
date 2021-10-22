@@ -101,7 +101,7 @@ Plug 'hashivim/vim-packer'
 Plug 'jvirtanen/vim-hcl'
 Plug 'psliwka/vim-smoothie'
 Plug 'ojroques/vim-scrollstatus'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'wfxr/minimap.vim'
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 Plug 'akinsho/nvim-bufferline.lua'
